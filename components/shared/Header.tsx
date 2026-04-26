@@ -100,11 +100,11 @@ export default function Header() {
   };
 
   return (
-    <header className="hidden md:flex flex-col bg-white border-b border-gray-200 shadow-sm">
+    <header className="flex flex-col bg-white border-b border-gray-200 shadow-sm">
       {/* Search Bar */}
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 px-6 py-4 relative"
+        className="flex items-center gap-2 md:px-6 px-3 md:py-4 py-2 relative"
       >
         <div className="flex-1 relative">
           <Search size={18} className="absolute left-3 top-3 text-gray-400" />
@@ -118,7 +118,7 @@ export default function Header() {
         </div>
 
         {localSearchResults.length > 0 && (
-          <div className="absolute top-16 p-5 bg-white rounded-md border shadow-md w-[calc(100%-48px)] z-[200]">
+          <div className="absolute top-14 md:top-16 p-5 bg-white rounded-md border shadow-md w-[calc(100%-24px)] md:w-[calc(100%-48px)] z-[200]">
             {localSearchResults.map((result) => {
               const Icon = getLocationIconByType(result.pType);
               return (
